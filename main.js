@@ -25,7 +25,7 @@
     e.preventDefault();
     const role = document.querySelector('#role').value;
     const body = `Hello,\n\nI would like to discuss: ${type.value}.\nMy role: ${role}.\n\nGeneral stage and purpose: [add a brief, non-confidential description]\nAny deadline: [add the date and time zone, if applicable]\nCounsel involvement: [confirm, or ask about the required arrangements]\n\nPlease confirm availability, scope and the agreement/submission steps before I send any records.\n\nNo confidential records are attached.`;
-    document.querySelector('#email-link').href = `mailto:precision-ai-ventures@proton.me?subject=${encodeURIComponent('LegalPrecision AI inquiry: '+type.value)}&body=${encodeURIComponent(body)}`;
+    document.querySelector('#email-link').href = `mailto:precision-ai-ventures@proton.me,info@legalprecision.ai?subject=${encodeURIComponent('LegalPrecision AI inquiry: '+type.value)}&body=${encodeURIComponent(body)}`;
     ready.hidden = false;
     ready.scrollIntoView({block:'nearest',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
   });
