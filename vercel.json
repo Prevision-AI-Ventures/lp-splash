@@ -5,22 +5,76 @@
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "Referrer-Policy", "value": "no-referrer" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "no-referrer"
+        }
       ]
     }
   ],
   "redirects": [
-    { "source": "/intake", "destination": "/#intake", "statusCode": 302 },
-    { "source": "/pricing", "destination": "/", "statusCode": 301 },
-    { "source": "/report/:path*", "destination": "/", "statusCode": 301 },
-    { "source": "/api/:path*", "destination": "/", "statusCode": 301 },
-    { "source": "/privacy", "destination": "/", "statusCode": 301 },
-    { "source": "/terms", "destination": "/", "statusCode": 301 },
-    { "source": "/about", "destination": "/", "statusCode": 301 },
-    { "source": "/how-it-works", "destination": "/#method", "statusCode": 302 },
-    { "source": "/faq", "destination": "/", "statusCode": 301 },
-    { "source": "/state-check", "destination": "/", "statusCode": 301 }
+    {
+      "source": "/video",
+      "destination": "/#video",
+      "statusCode": 302
+    },
+    {
+      "source": "/intake",
+      "destination": "/#intake",
+      "statusCode": 302
+    },
+    {
+      "source": "/pricing",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/report/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/api/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/privacy",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/terms",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/about",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/how-it-works",
+      "destination": "/#method",
+      "statusCode": 302
+    },
+    {
+      "source": "/faq",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/state-check",
+      "destination": "/",
+      "statusCode": 301
+    }
   ]
 }

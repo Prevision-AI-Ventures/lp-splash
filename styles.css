@@ -16,3 +16,5 @@
 @media(max-width:780px){.workflow-diagram{grid-template-columns:1fr 1fr;gap:1.5rem}.workflow-diagram li:nth-child(2)::after{display:none}.detailed-offerings{gap:0 2rem}}
 @media(max-width:520px){.detailed-offerings,.workflow-diagram{grid-template-columns:1fr}.workflow-diagram li:not(:last-child)::after{display:none}.workflow-diagram li{padding-right:0}}
 .finding .review-output li::before{content:none}
+
+.video-frame{margin:0;max-width:1100px}.video-frame video{display:block;width:100%;height:auto;aspect-ratio:16/9;background:var(--navy);border:1px solid var(--line);border-top:3px solid var(--gold)}.video-frame figcaption{margin-top:1rem;font-size:var(--sm);color:var(--muted)}.video-frame a{color:var(--ink)}
