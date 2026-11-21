@@ -1,0 +1,6 @@
+{
+  "name": "lp-splash",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" }
+}
