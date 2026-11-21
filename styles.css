@@ -41,3 +41,5 @@
 .hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
 @media(max-width:780px){.signup-grid{grid-template-columns:1fr;gap:2rem}}
 @media(max-width:520px){.signup-panel{padding:1.5rem}}
+
+.signup-note{margin-top:.6rem;font-size:var(--xs);color:var(--muted)}

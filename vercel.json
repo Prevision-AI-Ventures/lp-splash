@@ -42,6 +42,11 @@
       "statusCode": 301
     },
     {
+      "source": "/api/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
       "source": "/privacy",
       "destination": "/",
       "statusCode": 301
@@ -76,10 +81,5 @@
       "destination": "/#newsletter",
       "statusCode": 302
     }
-  ],
-  "functions": {
-    "api/subscribe.js": {
-      "includeFiles": "email-templates/**"
-    }
-  }
+  ]
 }

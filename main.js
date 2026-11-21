@@ -31,7 +31,7 @@
   });
 })();
 
-// AI in the Courts newsletter signup
+// AI in the Courts newsletter signup: prepares an email to us; nothing is stored on this site
 (function () {
   var form = document.getElementById('newsletter-form');
   if (!form) return;
@@ -47,20 +47,8 @@
     if (!form.elements.consent.checked) {
       status.textContent = 'Please tick the box so we can email you.'; status.className = 'signup-status error'; form.elements.consent.focus(); return;
     }
-    var btn = form.querySelector('button[type=submit]');
-    btn.disabled = true; status.textContent = 'Signing you up...';
-    fetch('/api/subscribe', {
-      method: 'POST', headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email: email, consent: true, consent_text: consentText, page: location.href, company: form.elements.company.value })
-    })
-      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { ok: r.ok, body: j }; }); })
-      .then(function (res) {
-        if (!res.ok) throw new Error((res.body && res.body.error) || 'error');
-        form.reset(); status.textContent = 'Thanks, you\u2019re signed up.';
-      })
-      .catch(function () {
-        status.textContent = 'Something went wrong. Please try again, or email precision-ai-ventures@proton.me.'; status.className = 'signup-status error';
-      })
-      .finally(function () { btn.disabled = false; });
+    var body = 'Please add me to AI in the Courts.\n\nEmail: ' + email + '\n\nConsent: ' + consentText + '\n(Consent version aiic-v1-2026-11-21, legalprecision.ai)';
+    location.href = 'mailto:info@legalprecision.ai?cc=precision-ai-ventures@proton.me&subject=' + encodeURIComponent('Sign me up: AI in the Courts') + '&body=' + encodeURIComponent(body);
+    status.innerHTML = 'Your sign-up email is ready in your email app. Send it to finish. No email app? Write to <a href="mailto:info@legalprecision.ai?subject=Sign%20me%20up%3A%20AI%20in%20the%20Courts">info@legalprecision.ai</a> with the subject &ldquo;Sign me up&rdquo;.';
   });
 })();
