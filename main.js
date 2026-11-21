@@ -30,3 +30,25 @@
     ready.scrollIntoView({block:'nearest',behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
   });
 })();
+
+// AI in the Courts newsletter signup: prepares an email to us; nothing is stored on this site
+(function () {
+  var form = document.getElementById('newsletter-form');
+  if (!form) return;
+  var status = document.getElementById('signup-status');
+  var consentText = document.getElementById('signup-consent-text').textContent.trim();
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    status.className = 'signup-status';
+    var email = form.elements.email.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      status.textContent = 'Please enter a valid email address.'; status.className = 'signup-status error'; form.elements.email.focus(); return;
+    }
+    if (!form.elements.consent.checked) {
+      status.textContent = 'Please tick the box so we can email you.'; status.className = 'signup-status error'; form.elements.consent.focus(); return;
+    }
+    var body = 'Please add me to AI in the Courts.\n\nEmail: ' + email + '\n\nConsent: ' + consentText + '\n(Consent version aiic-v1-2026-11-21, legalprecision.ai)';
+    location.href = 'mailto:info@legalprecision.ai?cc=precision-ai-ventures@proton.me&subject=' + encodeURIComponent('Sign me up: AI in the Courts') + '&body=' + encodeURIComponent(body);
+    status.innerHTML = 'Your sign-up email is ready in your email app. Send it to finish. No email app? Write to <a href="mailto:info@legalprecision.ai?subject=Sign%20me%20up%3A%20AI%20in%20the%20Courts">info@legalprecision.ai</a> with the subject &ldquo;Sign me up&rdquo;.';
+  });
+})();

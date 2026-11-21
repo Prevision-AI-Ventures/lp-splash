@@ -75,6 +75,11 @@
       "source": "/state-check",
       "destination": "/",
       "statusCode": 301
+    },
+    {
+      "source": "/newsletter",
+      "destination": "/#newsletter",
+      "statusCode": 302
     }
   ]
 }
